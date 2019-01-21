@@ -3,7 +3,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {Nav, Platform } from 'ionic-angular';
 import { MenuController } from 'ionic-angular';
-import { NativeStorage } from '@ionic-native/native-storage';
 
 import { LoginPage } from '../pages/login/login';
 
@@ -23,7 +22,7 @@ export class MyApp {
   public userperm: string;
   
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController, private nativeStorage: NativeStorage) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController) {
     platform.ready().then(() => {
       
       statusBar.styleDefault();
@@ -34,14 +33,5 @@ export class MyApp {
   onClick() {
     this.menuCtrl.close();
     this.nav.push(LoginPage);
-}
-
-ionViewDidLoad() {
-
-    this.nativeStorage.getItem('userdata').then((data)=>{
-        this.username = data.username;
-        this.userlogo = '../assets/imgs/users/' + data.username + '.png';
-        this.userperm = data.perm;
-    });
   }
 }
