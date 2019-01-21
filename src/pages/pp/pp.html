@@ -1,34 +1,89 @@
 <ion-header>
   <p>BLANK</p>
 </ion-header>
+
 <ion-content padding>
-  <ion-row>
-    <ion-col>
-        <div *ngFor="let item of data">
-            <ion-card>
 
-                <ion-item>
-                    <ion-avatar item-start>
-                        <img src="{{item.img}}">
-                    </ion-avatar>
-                    <h2>{{item.title}} de {{item.seller_id.name}}</h2>
-                    <p>{{item.ref}}</p>
-                </ion-item>
+    <div class="p-or-p">
+        <button>Prestation</button>
+        <button>Produit</button>
+    </div>
 
-                <ion-card-content>
-                    <p>{{item.desc}}</p>
-                </ion-card-content>
+    <ion-searchbar placeholder="Rechercher"></ion-searchbar>
 
-                <ion-row>
-                    <ion-col>
-                        <button ion-button icon-start clear small>
-                            <div>{{item.price}} €</div>
-                        </button>
-                    </ion-col>
-                </ion-row>
+    <section>
+        <h3>En Vedette...</h3>
 
-            </ion-card>
+        <div class="items">
+            <div *ngFor="let item of data" class="pp-item">
+                <p>{{ item.title }}</p> <!--- limitTo: 15 -->
+                <img src="../../assets/imgs/pp/img/bonbons-coeur.png">
+            </div>
+
+            <div class="see_more">
+                <p>Voir Plus</p>
+            </div>
         </div>
-    </ion-col>
-</ion-row>
+    </section>
+
+    <section>
+        <h3>Nouveautés...</h3>
+
+        <div class="items">
+            <div class="pp-item">
+                <p>Product</p>
+                <img src="../../assets/imgs/pp/img/bonbons-coeur.png">
+            </div>
+            <div class="pp-item">
+                <p>Product</p>
+                <img src="../../assets/imgs/pp/img/bonbons-coeur.png">
+            </div>
+            <div class="pp-item">
+                <p>Product</p>
+                <img src="../../assets/imgs/pp/img/bonbons-coeur.png">
+            </div>
+            <div class="pp-item">
+                <p>Product</p>
+                <img src="../../assets/imgs/pp/img/bonbons-coeur.png">
+            </div>
+            <div class="pp-item">
+                <p>Product</p>
+                <img src="../../assets/imgs/pp/img/bonbons-coeur.png">
+            </div>
+
+            <div class="see_more">
+                <p>Voir Plus</p>
+            </div>
+        </div>
+    </section>
+
+  <!---<ion-row>
+        <ion-col>
+            <div *ngFor="let item of data">
+                <ion-card>
+
+                    <ion-item>
+                        <ion-avatar item-start>
+                            <img src="{{item.img}}">
+                        </ion-avatar>
+                        <h2>{{item.title}} de {{item.seller_id.name}}</h2>
+                        <p>{{item.ref}}</p>
+                    </ion-item>
+
+                    <ion-card-content>
+                        <p>{{item.desc}}</p>
+                    </ion-card-content>
+
+                    <ion-row>
+                        <ion-col>
+                            <button ion-button icon-start clear small>
+                                <div>{{item.price}} €</div>
+                            </button>
+                        </ion-col>
+                    </ion-row>
+
+                </ion-card>
+            </div>
+        </ion-col>
+    </ion-row>--->
 </ion-content>

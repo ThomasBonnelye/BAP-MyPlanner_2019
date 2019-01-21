@@ -1,3 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Lobster+Two:400,700');
+
 page-pp {
+    .p-or-p {
+        margin-top: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        button {
+            font-family: 'Lobster Two', 'Lato', sans-serif;
+            margin: 2px;
+            height: 48px;
+            width: 50%;
+            font-size: 20px;
+            background: white;
+            color: #707070 !important;
+            //background: #F8FAFF !important;
+            //color: #FF3366 !important;
+            cursor: pointer;
+            -webkit-box-shadow: 0px 5px 5px -2px rgba(177,189,217,0.5);
+            -moz-box-shadow: 0px 5px 5px -2px rgba(177,189,217,0.5);
+            box-shadow: 0px 5px 5px -2px rgba(177,189,217,0.5);
+            transition: 0.2s;
+            &:hover {
+                background: white !important;
+                color: #FF3366 !important;
+                -webkit-box-shadow: 0 0 0 0 rgba(177,189,217,0.5);
+                -moz-box-shadow: 0 0 0 0 rgba(177,189,217,0.5);
+                box-shadow: 0 0 0 0 rgba(177,189,217,0.5);
+            }
+        }
+    }
+
+    ion-searchbar {
+        font-family: sans-serif;
+        margin-top: 10px;
+        height: 48px;
+        width: 100%;
+        background: white;
+        font-weight: 400 !important;
+        color: #707070 !important;
+        .searchbar-input-container {
+            box-shadow: none !important;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            .searchbar-input {
+                font-weight: 300;
+                -webkit-box-shadow: none !important;
+                box-shadow: none !important;
+            }
+        }
+    }
+
+    section {
+        margin: 20px 0 5px 0;
+        width: 100%;
+        font-family: 'Lato', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        h3 {
+            height: 20px;
+            color: #808080;
+            font-size: 16px;
+        }
+        .items {
+            transition: 0.1s;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            .pp-item {
+                margin: 3px;
+                width: 125px;
+                height: 110px;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                flex-direction: column;
+                -webkit-box-shadow: 0px 1px 5px 0px rgba(177,189,217,0.5);
+                -moz-box-shadow: 0px 1px 5px 0px rgba(177,189,217,0.5);
+                box-shadow: 0px 1px 5px 0px rgba(177,189,217,0.5);
+                p {
+                    margin-top: 5px;
+                    font-size: 16px;
+                    text-align: center;
+                    height: 10px;
+                    width: 100%;
+                    font-family: 'Lobster Two', 'Lato', sans-serif !important;
+                }
+                img {
+                    margin-top: -5px;
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+            .see_more {
+                margin: 3px;
+                width: 125px;
+                height: 110px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                -webkit-box-shadow: 0px 1px 5px 0px rgba(177,189,217,0.5);
+                -moz-box-shadow: 0px 1px 5px 0px rgba(177,189,217,0.5);
+                box-shadow: 0px 1px 5px 0px rgba(177,189,217,0.5);
+                p {
+                    font-size: 16px;
+                    text-align: center;
+                    font-family: 'Lobster Two', 'Lato', sans-serif !important;
+                }
+            }
+        }
+    }
 
 }
