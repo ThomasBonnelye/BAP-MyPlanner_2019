@@ -1,0 +1,32 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!---<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title> -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!---  </ion-navbar>
+
+</ion-header>  -->
+
+<ion-content padding>
+
+    <div class="image_login_perso">
+      <img src="{{userlogo}}" alt="My planner user image">
+    </div>
+
+    <div class="welcome">
+        <h3>Bienvenue :</h3>
+        <h2>{{username}}</h2>
+
+        <a *ngIf="userperm != 0" (click)="goHome()" class="pro_account"><span>Revenir à</span><span>l'accueil</span></a>
+
+        <a *ngIf="userperm != 1" (click)="goPro()" class="pro_account"><span>Connecter son</span><span>compte pro</span></a>
+        <a *ngIf="userperm != 1" (click)="goHome()" class="accueil">Revenir à L'accueil</a>
+    </div>
+
+</ion-content>

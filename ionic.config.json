@@ -1,5 +1,7 @@
 {
   "name": "Tabs_SideMenu",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

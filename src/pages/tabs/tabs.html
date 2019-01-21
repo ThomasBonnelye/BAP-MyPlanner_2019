@@ -1,6 +1,21 @@
+<ion-header>
+    <ion-navbar color="#f8faff">
+      <button ion-button menuToggle>
+        <ion-icon name="custom-side"></ion-icon>
+      </button>
+        <div class="img" style=" height:50%; width: 50%; margin: auto;"><img src="../../assets/imgs/logo_header.png" alt=""></div>
+      <ion-buttons end>
+        <button ion-button [navPush]="PanierButton">
+          <ion-icon name="cart"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
 <ion-tabs>
-  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="Event" tabIcon="information-circle"></ion-tab>
-  <ion-tab [root]="tab3Root" tabTitle="Pp" tabIcon="contacts"></ion-tab>
-  <ion-tab [root]="tab4Root" tabTitle="Account" tabIcon="contacts"></ion-tab>
+  <ion-tab [root]="tab1Root" tabTitle="Accueil" tabIcon="custom-home"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="P&P" tabIcon="custom-produit"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Evenements" tabIcon="custom-calendrier"></ion-tab>
+  <ion-tab [root]="tab4Root" tabTitle="Comptes" tabIcon="custom-account"></ion-tab>
 </ion-tabs>
+

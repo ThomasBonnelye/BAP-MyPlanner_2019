@@ -1,18 +1,70 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
+<ion-content style="background-color: #fcfdff;">
+  <div class="event">
+      <img src="../../assets/imgs/event.jpeg" alt="">
+      <div class="title">
+        <h1>Composes ton</h1>
+        <h1>évènement sur mesure</h1>
+      </div>
+  </div>
+  <p style="margin-top: 23px;margin-bottom: 6px;">
+    Pour quelle occasion ?
   </p>
+  <ion-grid>
+      <ion-row>
+        <ion-col>
+            <img src="../../assets/imgs/ceremonie.jpeg">
+            <div class="col-title">Cérémonies</div>
+        </ion-col>
+        <ion-col>
+            <img src="../../assets/imgs/anniv.jpg">
+            <div class="col-title">Anniversaire</div>
+        </ion-col> 
+      </ion-row>
+      <ion-row>
+        <ion-col>
+            <img src="../../assets/imgs/occa.jpeg">
+            <div class="col-title" style="right: 1%;">Grandes Occasions</div>
+        </ion-col>
+        <ion-col>
+            <img src="../../assets/imgs/fetes.jpeg">
+            <div class="col-title">Fêtes et Soirées</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <p style="margin-top: -5px;margin-bottom: 14px;">
+        En ce moment ...
+    </p>
+    <ion-scroll scrollX="true" style="width:100%; height:140px;"> 
+      <div class="inner">
+        <ion-card>
+            <img src="../../assets/imgs/card.jpg"/>
+            <div class="card-title">Boite de bonbons</div>
+          </ion-card>
+        
+          <ion-card>
+            <img src="../../assets/imgs/card.jpg"/>
+            <div class="card-title">Boite de bonbons</div>
+          </ion-card>
+        
+          <ion-card>
+            <img src="../../assets/imgs/card.jpg"/>
+            <div class="card-title">Boite de bonbons</div>
+          </ion-card>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+          <ion-card>
+            <img src="../../assets/imgs/card.jpg"/>
+            <div class="card-title">Boite de bonbons</div>
+          </ion-card>
+
+            <ion-card>
+              <img src="../../assets/imgs/card.jpg"/>
+              <div class="card-title">Boite de bonbons</div>
+            </ion-card>
+        </div>
+    </ion-scroll>
+    <div class="blog">
+        <img id="banner-blog" src="../../assets/imgs/blog.jpeg">
+        <div class="title-blog" style="top: 24%;">Consulter le blog</div>
+    </div>
 </ion-content>

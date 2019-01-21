@@ -1,17 +1,25 @@
 <ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
-    </ion-list>
+    <div style="top: auto;">
+      <div (click)="onClick()" class="image_login_perso">
+        <img *ngIf="userperm == 0 || userperm == 1" src="{{userlogo}}" alt="My planner user image">
+        <img *ngIf="!userperm" src="../assets/imgs/login.png" alt="My planner user image">
+      </div>
+  
+        <hr style=" background-color: #a37f93; border: 1px solid #a37f93;
+      border-radius: 1px; margin-left: 28%; margin-right: 28%;">
+          <a href=""><p>Page d'accueil</p></a>
+          <a href=""><p>Promotions</p></a>
+          <a href=""><p>Bons plans</p></a>
+          <a href=""><p>Blog</p></a>
+          <a href=""><p>Evaluez nous</p></a>
+          <a href=""><p style="margin-bottom: 30px;">Contacts</p></a>
+        <hr style=" background-color: #a37f93; border: 1px solid #a37f93;
+      border-radius: 1px; margin-left: 28%; margin-right: 28%;">
+      <a href=""><p>Paramètres</p></a>
+  </div>
   </ion-content>
+  
 
 </ion-menu>
 
