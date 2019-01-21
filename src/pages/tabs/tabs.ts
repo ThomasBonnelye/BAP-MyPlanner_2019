@@ -20,7 +20,37 @@ export class TabsPage {
 
   PanierButton: any;
 
+
   constructor(public navController: NavController) {
-    this.PanierButton = PanierPage;
+      this.PanierButton = PanierPage;
   }
+    /*
+        setValue() {
+            this.nativeStorage.setItem('userterms', {terms: 1})
+        }
+
+        ionViewWillEnter() {
+            this.nativeStorage.getItem('userterms').then((data)=>{
+                this.terms = data.terms;
+                this.popUp();
+            });
+        }
+
+        popUp() {
+            if (this.terms != '1') {
+                let alert = this.alertCtrl.create({
+                    title: 'Collecte des données',
+                    message: 'Vous devez autoriser MyPlanner à récolter des données pour garantir son fonctionnement normal.',
+                    buttons: [
+                        {
+                            text: 'Accepter',
+                            handler: () => {
+                                this.setValue();
+                            }
+                        }
+                    ]
+                });
+                alert.present();
+            }
+        }*/
 }

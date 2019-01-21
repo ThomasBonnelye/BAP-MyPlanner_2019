@@ -74,8 +74,6 @@ export class LoginPage {
                     //alert(this.valid);
                 }
             });
-
-
     }
 
 
