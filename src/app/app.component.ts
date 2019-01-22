@@ -17,11 +17,6 @@ export class MyApp {
 
   rootPage:any = TabsPage;
 
-  public username: string;
-  public userlogo: string;
-  public userperm: string;
-  
-
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController) {
     platform.ready().then(() => {
       
