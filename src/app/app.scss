@@ -82,9 +82,15 @@ ion-icon {
         background: url("../assets/imgs/side_off.png") no-repeat 50% 50%;
         background-size: contain;
     }//in case of inactive*/
+    &[class*="panier"]{
+        background: url("../assets/icons/panier.png") no-repeat 50% 50%;
+        background-size: contain;
+    }
     
 }
-
+.disable-hover.bar-button.bar-button-ios.bar-button-default.bar-button-default-ios {
+    padding-right: 5px;
+}
 
 .tab-button-text{
     font-family: Lato;
