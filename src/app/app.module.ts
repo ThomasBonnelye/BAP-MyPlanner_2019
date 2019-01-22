@@ -63,7 +63,6 @@ import { HttpModule} from "@angular/http";
     MentionsLegalesPage,
     PpNouveautesPage,
     PpVedettePage,
-    TruncatePipe,
     FilterPage
   ],
   providers: [
