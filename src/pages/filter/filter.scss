@@ -2,7 +2,7 @@ page-filter {
 
     h1 {
         font-family: Lobstertwo;
-        color: #B1BDD9;
+        color: #899ac2;
     }
 
     .cat {
@@ -10,17 +10,64 @@ page-filter {
         text-align: center;
         border-style: solid;
         border-color: #B1BDD9;
-        border-width: 3px;
+        border-width: 2px;
+        margin: 3.5px;
       }
+      .grid[no-padding] > .row > .col {
+
+        padding: 17px;
+    
+    }
 
     .col-title {
-    font-size: 1.2em;
+    font-size: 1.0em; 
     width: 100%;
     font-weight: bold;
     color:#B1BDD9;
     font-family: Lato;
     }
+//button
+    .button-outline-ios-secondary {
 
+        border-color: #B1BDD9;
+        color: #B1BDD9;
+        background-color: transparent;
+    }
+
+    .button-outline-ios-secondary.activated {
+
+        border-color: #FF3366;
+        color: white;
+        background-color: #FF3366;
+    }
+
+    .button-outline-md-secondary.activated {
+
+        border-color: #FF3366;
+        color: white;
+        background-color: #FF3366;
+    }
+
+    .button-outline-md-secondary {
+
+        border-color: #B1BDD9;
+        color: #B1BDD9;
+        background-color: transparent;
+    }
+
+    .button-outline-ios {
+
+        border-radius: 0px;
+        border-width: 2px;
+    }
+
+    .button-outline-md {
+
+        border-radius: 0px;
+        border-width: 2px;
+    }
+
+//fin boutton
     a {
         text-decoration: none;
     }
@@ -32,4 +79,19 @@ page-filter {
     p:hover {
         color: #FF3366;
     } 
+    .range-bar.range-bar-active {
+        background-color:red;
+    }
+
+    .range-ios {
+
+        padding-bottom: 24px;
+    
+    }
+    .but {
+        position: relative;
+        text-align: center;
+        font-size: 1.3em;
+        margin-top: -9px;
+    }
 }

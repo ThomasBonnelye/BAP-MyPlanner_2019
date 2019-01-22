@@ -6,48 +6,44 @@
 -->
 
 <ion-content padding>
-  <h1 style="padding-top: 59px;">Catégories</h1>
-    <ion-grid>
+  <h1 style="padding-top: 55px; padding-bottom: 14px;">Catégories</h1>
+    <ion-grid no-padding>
       <ion-row>
-        <ion-col class="cat">
-            <div class="col-title">Cérémonies</div>
+        <ion-col>
+            <button style="width: 160px; height: 60px;"ion-button color="secondary" block outline>Cérémonies</button>   
         </ion-col>
-        <ion-col class="cat">
-            <div class="col-title">Anniversaire</div>
+        <ion-col>
+        <button style="width: 160px; height: 60px;" ion-button color="secondary" block outline>Anniversaires</button>
         </ion-col> 
       </ion-row>
       <ion-row>
-        <ion-col class="cat">
-            <div class="col-title" style="right: 1%;">Grandes Occasions</div>
+        <ion-col>
+            <button style="width: 160px; height: 60px;" ion-button color="secondary" block outline>Grandes Occasions</button>
         </ion-col>
-        <ion-col class="cat">
-            <div class="col-title">Fêtes et Soirées</div>
+        <ion-col>
+            <button style="width: 160px; height: 60px;" ion-button color="secondary" block outline>Fêtes et Soirées</button>
         </ion-col>
       </ion-row>
     </ion-grid>
-    <h1>Prix</h1>
-    <ion-list>
-      <ion-list-header style="color: #B1BDD9;">
-        Min :
-        <p style="color: #FF3366;">{{prixMin}}</p>
-      </ion-list-header>
-      <ion-item>
-          <ion-range min="0" max="50000" step="1000" [(ngModel)]="prixMin"></ion-range>
-      </ion-item>
-      <ion-list-header style="color: #B1BDD9;">
-          Max :
-          <p style="color: #FF3366;">{{prixMax}}</p>
-        </ion-list-header>
-        <ion-item>
-            <ion-range min="0" max="50000" step="1000" [(ngModel)]="prixMax"></ion-range>
-        </ion-item>
-    </ion-list>
+    <h1 style="margin-top: 35px; padding-bottom: 15px;">Prix</h1>
+      <div style="margin-left: 234px">
+       <span style="color: #B1BDD9; font-family: Lobstertwo; font-size: 1.2em;">Min : </span>
+       <span style="color: #FF3366; font-family: Lato; font-size: 1.2em;" >{{prixMin}}</span> 
+       <span style="color: #FF3366; font-family: Lato; font-size: 1.2em;" >€</span> 
+    </div>
+          <ion-range min="0" max="20000" step="1000" [(ngModel)]="prixMin"></ion-range>
+      <div style="margin-left: 234px">
+        <span style="color: #B1BDD9; font-family: Lobstertwo; font-size: 1.2em;">Max : </span> 
+        <span style="color: #FF3366; font-family: Lato; font-size: 1.2em;" >{{prixMax}}</span> 
+        <span style="color: #FF3366; font-family: Lato; font-size: 1.2em;" >€</span> 
+    </div>
+          <ion-range min="0" max="20000" step="1000" [(ngModel)]="prixMax"></ion-range>
     <ion-grid>
         <ion-row>
-          <ion-col>
+          <ion-col class="but">
               <a href="" class="col-title"><p>Retour</p></a>
           </ion-col>
-          <ion-col>
+          <ion-col class="but">
               <a href="" class="col-title"><p>Valider</p></a>
           </ion-col> 
         </ion-row>

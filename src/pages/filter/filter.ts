@@ -18,9 +18,13 @@ export class FilterPage {
   prixMin: number = 0;
   prixMax: number = 0;
 
+  buttonColor: string = '#000';
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+    addEvent(){
+    this.buttonColor = '#3FF3366';
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad FilterPage');
   }
