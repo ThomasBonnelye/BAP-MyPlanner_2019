@@ -17,7 +17,7 @@ export class FilterPage {
 
   prixMin: number = 0;
   prixMax: number = 50000;
-  
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
