@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Http} from "@angular/http";
 import 'rxjs/add/operator/map';
+import { PpNouveautesPage } from "../pp-nouveautes/pp-nouveautes";
+import { PpVedettePage } from "../pp-vedette/pp-vedette";
+import { LoginPage } from "../login/login";
 
 /**
  * Generated class for the PpPage page.
@@ -41,9 +44,16 @@ export class PpPage {
               this.new.push(data.data[5]);
 
           },err => {console.log(err);
-
-          });
+      });
   }
+
+    goPPNew() {
+        this.navCtrl.push(PpNouveautesPage, { porp: this.porp }, { animate: true, direction: 'forward' });
+    }
+
+    goPPfamous() {
+        this.navCtrl.push(PpVedettePage, { porp: this.porp }, { animate: true, direction: 'forward' });
+    }
 
   loadData(type) {
       if(type == "produits") { //SI BOUTTON PRODUIT

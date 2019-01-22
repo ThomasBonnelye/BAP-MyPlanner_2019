@@ -14,10 +14,12 @@ import { AccountPage } from '../pages/account/account';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PanierPage } from '../pages/panier/panier';
 
+import { PpVedettePage } from '../pages/pp-vedette/pp-vedette';
+import { PpNouveautesPage } from '../pages/pp-nouveautes/pp-nouveautes';
+
 import { LoginPage } from '../pages/login/login';
 import { LoginRedirectPage } from '../pages/login-redirect/login-redirect';
 import { MentionsLegalesPage } from '../pages/mention-legales/mention-legales';
-
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -35,6 +37,8 @@ import { HttpModule} from "@angular/http";
     LoginPage,
     LoginRedirectPage,
     MentionsLegalesPage,
+    PpNouveautesPage,
+    PpVedettePage,
     TruncatePipe
   ],
   imports: [
@@ -54,6 +58,8 @@ import { HttpModule} from "@angular/http";
     TabsPage,
     LoginPage,
     LoginRedirectPage,
+    PpNouveautesPage,
+    PpVedettePage,
     MentionsLegalesPage
   ],
   providers: [
