@@ -16,7 +16,6 @@ import { HomePage } from '../home/home';
 })
 
 export class MentionsLegalesPage {
-
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
