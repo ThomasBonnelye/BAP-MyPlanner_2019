@@ -5,30 +5,24 @@ page-filter {
         color: #899ac2;
     }
 
-    .cat {
-        position: relative;
-        text-align: center;
-        border-style: solid;
-        border-color: #B1BDD9;
-        border-width: 2px;
-        margin: 3.5px;
-      }
-      .grid[no-padding] > .row > .col {
-
-        padding: 17px;
-    
+    .grid[no-padding] > .row > .col {
+        padding: 2px;
     }
 
     .col-title {
-    font-size: 1.0em; 
+    font-size: 1.2em; 
     width: 100%;
     font-weight: bold;
     color:#B1BDD9;
     font-family: Lato;
     }
+
 //button
     .button-outline-ios-secondary {
-
+        margin-left: 1px;
+        margin-right: 1px;
+        margin-top: 1px;
+        margin-bottom: 1px;
         border-color: #B1BDD9;
         color: #B1BDD9;
         background-color: transparent;
