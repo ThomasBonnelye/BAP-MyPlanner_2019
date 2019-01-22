@@ -2,13 +2,14 @@ page-filter {
 
     h1 {
         font-family: Lobstertwo;
+        color: #B1BDD9;
     }
 
     .cat {
         position: relative;
         text-align: center;
         border-style: solid;
-        border-color: grey;
+        border-color: #B1BDD9;
         border-width: 3px;
       }
 
@@ -16,12 +17,16 @@ page-filter {
     font-size: 1.2em;
     width: 100%;
     font-weight: bold;
-    color: grey;
+    color:#B1BDD9;
     font-family: Lato;
     }
 
     a {
         text-decoration: none;
+    }
+
+    p {
+        color: #B1BDD9;
     }
 
     p:hover {

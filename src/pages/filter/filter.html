@@ -27,16 +27,16 @@
     </ion-grid>
     <h1>Prix</h1>
     <ion-list>
-      <ion-list-header>
+      <ion-list-header style="color: #B1BDD9;">
         Min :
-        <ion-badge item-end color="secondary">{{prixMin}}</ion-badge>
+        <p style="color: #FF3366;">{{prixMin}}</p>
       </ion-list-header>
       <ion-item>
           <ion-range min="0" max="50000" step="1000" [(ngModel)]="prixMin"></ion-range>
       </ion-item>
-      <ion-list-header>
+      <ion-list-header style="color: #B1BDD9;">
           Max :
-          <ion-badge item-end color="secondary">{{prixMax}}</ion-badge>
+          <p style="color: #FF3366;">{{prixMax}}</p>
         </ion-list-header>
         <ion-item>
             <ion-range min="0" max="50000" step="1000" [(ngModel)]="prixMax"></ion-range>
