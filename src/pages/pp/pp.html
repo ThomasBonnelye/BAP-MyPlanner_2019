@@ -1,34 +1,75 @@
 <ion-header>
   <p>BLANK</p>
 </ion-header>
+
 <ion-content padding>
-  <ion-row>
-    <ion-col>
-        <div *ngFor="let item of data">
-            <ion-card>
 
-                <ion-item>
-                    <ion-avatar item-start>
-                        <img src="{{item.img}}">
-                    </ion-avatar>
-                    <h2>{{item.title}} de {{item.seller_id.name}}</h2>
-                    <p>{{item.ref}}</p>
-                </ion-item>
+    <div class="p-or-p">
+        <button (click)="loadData('prestations')">Prestation</button>
+        <button (click)="loadData('produits')">Produit</button>
+    </div>
 
-                <ion-card-content>
-                    <p>{{item.desc}}</p>
-                </ion-card-content>
+    <ion-searchbar placeholder="Rechercher">
+        (ionInput)="getItems($event)"
+    </ion-searchbar>
 
-                <ion-row>
-                    <ion-col>
-                        <button ion-button icon-start clear small>
-                            <div>{{item.price}} €</div>
-                        </button>
-                    </ion-col>
-                </ion-row>
+    <section>
+        <h3>Nos {{ porp }} en vedette...</h3>
 
-            </ion-card>
+        <div class="items">
+            <div *ngFor="let item of famous" class="pp-item">
+                <p>{{ item.title | limitTo: 15 }}</p> <!--- limitTo: 15 -->
+                <img src="../../assets/imgs/pp/img/{{item.img}}" alt="image: {{item.title}}">
+            </div>
+
+            <div class="see_more">
+                <p>Voir Plus</p>
+            </div>
         </div>
-    </ion-col>
-</ion-row>
+    </section>
+
+    <section>
+        <h3>Nos nouveautés...</h3>
+
+        <div class="items">
+            <div *ngFor="let item of new" class="pp-item">
+                <p>{{ item.title | limitTo: 15 }}</p> <!--- limitTo: 15 -->
+                <img src="../../assets/imgs/pp/img/{{item.img}}" alt="image: {{item.title}}">
+            </div>
+
+            <div class="see_more">
+                <p>Voir Plus</p>
+            </div>
+        </div>
+    </section>
+
+  <!---<ion-row>
+        <ion-col>
+            <div *ngFor="let item of data">
+                <ion-card>
+
+                    <ion-item>
+                        <ion-avatar item-start>
+                            <img src="{{item.img}}">
+                        </ion-avatar>
+                        <h2>{{item.title}} de {{item.seller_id.name}}</h2>
+                        <p>{{item.ref}}</p>
+                    </ion-item>
+
+                    <ion-card-content>
+                        <p>{{item.desc}}</p>
+                    </ion-card-content>
+
+                    <ion-row>
+                        <ion-col>
+                            <button ion-button icon-start clear small>
+                                <div>{{item.price}} €</div>
+                            </button>
+                        </ion-col>
+                    </ion-row>
+
+                </ion-card>
+            </div>
+        </ion-col>
+    </ion-row>--->
 </ion-content>

@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { FormsModule } from "@angular/forms";
 import { NativeStorage } from '@ionic-native/native-storage';
+import { TruncatePipe }   from './app.pipe';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -33,7 +34,8 @@ import { HttpModule} from "@angular/http";
     TabsPage,
     LoginPage,
     LoginRedirectPage,
-    MentionsLegalesPage
+    MentionsLegalesPage,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,
