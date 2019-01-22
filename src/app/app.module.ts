@@ -13,6 +13,7 @@ import { PpPage } from '../pages/pp/pp';
 import { AccountPage } from '../pages/account/account';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PanierPage } from '../pages/panier/panier';
+import { FilterPage } from '../pages/filter/filter';
 
 import { PpVedettePage } from '../pages/pp-vedette/pp-vedette';
 import { PpNouveautesPage } from '../pages/pp-nouveautes/pp-nouveautes';
@@ -39,7 +40,8 @@ import { HttpModule} from "@angular/http";
     MentionsLegalesPage,
     PpNouveautesPage,
     PpVedettePage,
-    TruncatePipe
+    TruncatePipe,
+    FilterPage
   ],
   imports: [
     BrowserModule,
@@ -58,9 +60,11 @@ import { HttpModule} from "@angular/http";
     TabsPage,
     LoginPage,
     LoginRedirectPage,
+    MentionsLegalesPage,
     PpNouveautesPage,
     PpVedettePage,
-    MentionsLegalesPage
+    TruncatePipe,
+    FilterPage
   ],
   providers: [
     StatusBar,

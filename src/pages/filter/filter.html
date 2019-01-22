@@ -1,0 +1,55 @@
+<!--
+  Generated template for the FilterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content padding>
+  <h1 style="padding-top: 59px;">Catégories</h1>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="cat">
+            <div class="col-title">Cérémonies</div>
+        </ion-col>
+        <ion-col class="cat">
+            <div class="col-title">Anniversaire</div>
+        </ion-col> 
+      </ion-row>
+      <ion-row>
+        <ion-col class="cat">
+            <div class="col-title" style="right: 1%;">Grandes Occasions</div>
+        </ion-col>
+        <ion-col class="cat">
+            <div class="col-title">Fêtes et Soirées</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <h1>Prix</h1>
+    <ion-list>
+      <ion-list-header>
+        Min :
+        <ion-badge item-end color="secondary">{{prixMin}}</ion-badge>
+      </ion-list-header>
+      <ion-item>
+          <ion-range min="0" max="50000" step="1000" [(ngModel)]="prixMin"></ion-range>
+      </ion-item>
+      <ion-list-header>
+          Max :
+          <ion-badge item-end color="secondary">{{prixMax}}</ion-badge>
+        </ion-list-header>
+        <ion-item>
+            <ion-range min="0" max="50000" step="1000" [(ngModel)]="prixMax"></ion-range>
+        </ion-item>
+    </ion-list>
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+              <a href="" class="col-title"><p>Retour</p></a>
+          </ion-col>
+          <ion-col>
+              <a href="" class="col-title"><p>Valider</p></a>
+          </ion-col> 
+        </ion-row>
+    </ion-grid>
+</ion-content>
