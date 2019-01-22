@@ -16,7 +16,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class FilterPage {
 
   prixMin: number = 0;
-  prixMax: number = 50000;
+  prixMax: number = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
