@@ -102,6 +102,7 @@ export class FilterPage {
 
   Envoyer() {
     if (this.type == "new") {
+      this.navCtrl.pop();
         this.navCtrl.push(PpNouveautesPage,{porp: "prestations", categorieA : this.categorieA, categorieB: this.categorieB, categorieC: this.categorieC, categorieD: this.categorieD, minprice: this.prixMin, maxprice: this.prixMax, sender: 'filter'});
         console.log('Catégorie A : ' + this.categorieA);
         console.log('Catégorie B : ' + this.categorieB);
@@ -110,6 +111,7 @@ export class FilterPage {
         console.log('Prix min :' + this.prixMin);
         console.log('Prix max :' + this.prixMax);
     } else {
+      this.navCtrl.pop();
         this.navCtrl.push(PpVedettePage,{porp: "prestations", categorieA : this.categorieA, categorieB: this.categorieB, categorieC: this.categorieC, categorieD: this.categorieD, minprice: this.prixMin, maxprice: this.prixMax, sender: 'filter'});
         console.log('Catégorie A : ' + this.categorieA);
         console.log('Catégorie B : ' + this.categorieB);
