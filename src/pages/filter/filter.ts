@@ -20,10 +20,10 @@ export class FilterPage {
   prixMin: number;
   prixMax: number;
   type: string;
-  categorieA: number;
-  categorieB: number;
-  categorieC: number;
-  categorieD: number;
+  categorieA: number = 0;
+  categorieB: number = 0;
+  categorieC: number = 0;
+  categorieD: number = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
       this.type = navParams.get("type");
@@ -31,6 +31,7 @@ export class FilterPage {
   }
 
   ionViewWillEnter() {
+    console.log('FILTER PAGE ENTER');
     this.cata = false;
     this.catb = false;
     this.catc = false;
