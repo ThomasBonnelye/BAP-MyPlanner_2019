@@ -18,8 +18,8 @@ export class PpNouveautesPage {
     public categorieB;
     public categorieC;
     public categorieD;
-    public minprice;
-    public maxprice;
+    public prixMin;
+    public prixMax;
     searchQuery: string = '';
     items: any = [];
     famous: any = [];
@@ -29,6 +29,7 @@ export class PpNouveautesPage {
     id: string;
     img: string;
     title: string;
+    sender: string;
 
     constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams) {
         this.porp = navParams.get("porp");
@@ -36,12 +37,15 @@ export class PpNouveautesPage {
         this.categorieB  = navParams.get("categorieB");
         this.categorieC  = navParams.get("categorieC");
         this.categorieD  = navParams.get("categorieD");
-        this.minprice = navParams.get("prixMin");
-        this.maxprice = navParams.get("prixMax");
+        this.prixMin = navParams.get("prixMin");
+        this.prixMax = navParams.get("prixMax");
+        this.sender = navParams.get("sender");
     }
+
     goFilter() {
-        this.navCtrl.push(FilterPage, { animate: true, direction: 'forward' });
+        this.navCtrl.push(FilterPage, { type: 'new' }, { animate: true, direction: 'forward' });
     }
+
     goPP() {
         this.navCtrl.push(PpPage, { porp: this.porp }, { animate: true, direction: 'forward' });
     }
@@ -51,7 +55,17 @@ export class PpNouveautesPage {
     }
 
     ionViewWillLoad() {
-        this.getItems(this.porp, 1,1,1,1,0,20000);
+        console.log('Catégorie A : ' + this.categorieA);
+        console.log('Catégorie B : ' + this.categorieB);
+        console.log('Catégorie C : ' + this.categorieC);
+        console.log('Catégorie D : ' + this.categorieD);
+        console.log('Prix min :' + this.prixMin);
+        console.log('Prix max :' + this.prixMax);
+        if (this.sender == "filter") {
+            this.getItems(this.porp, this.categorieA,this.categorieB,this.categorieC,this.categorieD,this.prixMin,this.prixMax);
+        } else {
+            this.getItems(this.porp, 1,1,1,1,0,20000);
+        }
     }
 
     loadData(type) {
