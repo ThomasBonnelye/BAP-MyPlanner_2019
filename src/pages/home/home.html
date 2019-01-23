@@ -36,12 +36,8 @@
         En ce moment ...
     </p>
     <ion-scroll scrollX="true" style="width:100%; height:140px;"> 
-      <div class="inner">
-        <ion-card *ngFor="let item of famous">
-            <img src="../../assets/imgs/pp/img/{{item.img}}"/>
-            <div class="card-title">{{ item.title | limitTo: 15 }}</div>
-          </ion-card>
-          <ion-card *ngFor="let item of famous">
+          <div class="inner">
+            <ion-card *ngFor="let item of famous" (click)="goPPdisplay(item.id)">
             <img src="../../assets/imgs/pp/img/{{item.img}}"/>
             <div class="card-title">{{ item.title | limitTo: 15 }}</div>
           </ion-card>

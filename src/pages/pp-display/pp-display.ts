@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {Http} from "@angular/http";
-import {PpPage} from "../pp/pp";
+import { Http } from "@angular/http";
+import { PpPage } from "../pp/pp";
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the PpDisplayPage page.
@@ -20,8 +21,9 @@ export class PpDisplayPage {
   id: string;
   category: string;
   display: any = [];
+  titleFormated: string;
 
-  constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private alertCtrl: AlertController, public http: Http, public navCtrl: NavController, public navParams: NavParams) {
       this.id = navParams.get("id");
       this.category = navParams.get("porp");
   }
@@ -37,6 +39,10 @@ export class PpDisplayPage {
 
               this.display = data;
 
+              let firstLetter = this.display.title.charAt(0).toUpperCase();
+              let stringWithoutFirstLetter = this.display.title.slice(1).toLowerCase();
+              this.titleFormated = firstLetter + stringWithoutFirstLetter;
+
               //console.log(this.display);
               //console.log(this.id);
               //console.log(this.category);
@@ -45,4 +51,30 @@ export class PpDisplayPage {
               console.log(err);
       });
   }
+
+
+    confirmBuy() {
+        let alert = this.alertCtrl.create({
+            title: 'Votre produit a bien été ajouté\n' +
+                'au panier.',
+            buttons: [
+                {
+                    text: 'Continuer les achats',
+                    role: 'cancel',
+                    handler: () => {
+                        console.log('Cancel clicked');//EVENEMENT CONTINUER ACHATS
+                    }
+                },
+                {
+                    text: 'Voir le panier',
+                    role: 'cancel',
+                    handler: () => {
+                        console.log('Buy clicked');//EVENEMENT VOIR LE PANIER
+                    }
+                }
+            ]
+        });
+        alert.present();
+    }
+
 }
