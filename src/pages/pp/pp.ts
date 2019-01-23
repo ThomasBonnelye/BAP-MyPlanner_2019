@@ -4,6 +4,7 @@ import {Http} from "@angular/http";
 import 'rxjs/add/operator/map';
 import { PpNouveautesPage } from "../pp-nouveautes/pp-nouveautes";
 import { PpVedettePage } from "../pp-vedette/pp-vedette";
+import { PpDisplayPage } from "../pp-display/pp-display";
 import { LoginPage } from "../login/login";
 
 /**
@@ -55,6 +56,10 @@ export class PpPage {
         this.navCtrl.push(PpVedettePage, { porp: this.porp }, { animate: true, direction: 'forward' });
     }
 
+    goPPdisplay(id) {
+        this.navCtrl.push(PpDisplayPage, { id: id, porp: this.porp }, { animate: true, direction: 'forward' });
+    }
+
   loadData(type) {
       if(type == "produits") { //SI BOUTTON PRODUIT
 
@@ -63,7 +68,6 @@ export class PpPage {
           this.http.get('https://nicolas.okbutwin.fr/myplanner/api/?products=all')
               .map(res => res.json())
               .subscribe(data => {
-
 
                   this.famous = [];
                   this.new = [];
