@@ -31,7 +31,7 @@
           </i>
         </a>
       </li>
-      <li>
+      <li *ngIf="porp == 'prestations'">
         <a>
           <i class="material-icons">
             sort
@@ -45,9 +45,9 @@
       <h3>Nos {{ porp }} en vedette...</h3>
 
       <ion-list class="items">
-        <div class="pp-item" *ngFor="let item of items">
+        <div class="pp-item" *ngFor="let item of items" (click)="goPPdisplay(item[0].id)">
           <p>{{ item[0].title | limitTo: 15 }}</p> <!--- limitTo: 15 -->
-          <img src="../../assets/imgs/pp/img/{{ item[0].img }}" alt="image: {{item.title}}">
+          <img src="../../assets/imgs/pp/img/{{ item[0].img }}" alt="image: {{item[0].title}}">
         </div>
       </ion-list>
 

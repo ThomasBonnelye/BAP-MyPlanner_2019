@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PpPage } from "../pp/pp";
-import {Http} from "@angular/http";
+import { Http } from "@angular/http";
+import {PpDisplayPage} from "../pp-display/pp-display";
 
 /**
  * Generated class for the PpVedettePage page.
@@ -35,6 +36,10 @@ export class PpVedettePage {
   goPP() {
       this.navCtrl.push(PpPage, { porp: this.porp }, { animate: true, direction: 'forward' });
   }
+
+    goPPdisplay(id) {
+        this.navCtrl.push(PpDisplayPage, { id: id, porp: this.porp }, { animate: true, direction: 'forward' });
+    }
 
   ionViewWillLoad() {
       this.getItems(this.porp, 1,1,1,1,0,20000);

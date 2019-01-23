@@ -17,6 +17,7 @@ import { FilterPage } from '../pages/filter/filter';
 
 import { PpVedettePage } from '../pages/pp-vedette/pp-vedette';
 import { PpNouveautesPage } from '../pages/pp-nouveautes/pp-nouveautes';
+import { PpDisplayPage } from "../pages/pp-display/pp-display";
 
 import { LoginPage } from '../pages/login/login';
 import { LoginRedirectPage } from '../pages/login-redirect/login-redirect';
@@ -41,6 +42,7 @@ import { HttpModule} from "@angular/http";
     PpNouveautesPage,
     PpVedettePage,
     TruncatePipe,
+    PpDisplayPage,
     FilterPage
   ],
   imports: [
@@ -63,6 +65,7 @@ import { HttpModule} from "@angular/http";
     MentionPage,
     PpNouveautesPage,
     PpVedettePage,
+    PpDisplayPage,
     FilterPage
   ],
   providers: [

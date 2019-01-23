@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PpPage } from "../pp/pp";
 import {Http} from "@angular/http";
+import {PpDisplayPage} from "../pp-display/pp-display";
 
 
 @IonicPage()
@@ -28,6 +29,10 @@ export class PpNouveautesPage {
 
     goPP() {
         this.navCtrl.push(PpPage, { porp: this.porp }, { animate: true, direction: 'forward' });
+    }
+
+    goPPdisplay(id) {
+        this.navCtrl.push(PpDisplayPage, { id: id, porp: this.porp }, { animate: true, direction: 'forward' });
     }
 
     ionViewWillLoad() {
