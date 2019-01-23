@@ -18,50 +18,26 @@ page-filter {
     }
 
 //button
-    .button-outline-ios-secondary {
-        margin-left: 1px;
-        margin-right: 1px;
-        margin-top: 1px;
-        margin-bottom: 1px;
-        border-color: #B1BDD9;
-        color: #B1BDD9;
-        background-color: transparent;
-    }
+input[type="checkbox"] {
+    display: none;
+}
 
-    .button-outline-ios-secondary.activated {
+input[type=checkbox]:not(old) + label {
+    display: inline-block;
+    background-size: 165px 58px;
+    background-image: url(../../assets/imgs/label.png);
+    text-align: center;
+    color: #B1BDD9;
 
-        border-color: #FF3366;
-        color: white;
-        background-color: #FF3366;
-    }
+}
 
-    .button-outline-md-secondary.activated {
+input[type=checkbox]:checked  + label {
+    background-image: none;
+    text-align: center;
+    background-color: #FF3366;
+    color: white;
+}
 
-        border-color: #FF3366;
-        color: white;
-        background-color: #FF3366;
-    }
-
-    .button-outline-md-secondary {
-
-        border-color: #B1BDD9;
-        color: #B1BDD9;
-        background-color: transparent;
-    }
-
-    .button-outline-ios {
-
-        border-radius: 0px;
-        border-width: 2px;
-    }
-
-    .button-outline-md {
-
-        border-radius: 0px;
-        border-width: 2px;
-    }
-
-//fin boutton
     a {
         text-decoration: none;
     }
@@ -74,7 +50,7 @@ page-filter {
         color: #FF3366;
     } 
     .range-bar.range-bar-active {
-        background-color:red;
+        background-color:#FF3366;
     }
 
     .range-ios {
