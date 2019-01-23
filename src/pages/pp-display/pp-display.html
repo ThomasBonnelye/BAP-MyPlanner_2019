@@ -23,38 +23,53 @@
   </div>
 
   <div class="pp-display">
-    <img src="../../assets/imgs/pp/img/{{ display.img }}" alt="image: {{ display.title }}">
-    <h3>{{ display.title }}</h3>
+    <img src="../../assets/imgs/pp/img/{{ display.img }}" alt="image: {{ titleFormated }}">
+    <h3>{{ titleFormated }}</h3>
+
     <div class="priceAndQty" >
-    <ion-item *ngIf="category == 'produits'">
       <h4>{{ display.price }} €</h4>
-      <ion-select [(ngModel)]="Quantity" placeholder="1">
-        <ion-option value="0">0</ion-option>
-        <ion-option value="1">1</ion-option>
-        <ion-option value="2">2</ion-option>
-        <ion-option value="3">3</ion-option>
-        <ion-option value="4">4</ion-option>
-        <ion-option value="5">5</ion-option>
-        <ion-option value="6">6</ion-option>
-        <ion-option value="7">7</ion-option>
-        <ion-option value="8">8</ion-option>
-        <ion-option value="9">9</ion-option>
-        <ion-option value="10">10</ion-option>
-      </ion-select>
-    </ion-item>
+      <ion-item *ngIf="category == 'produits'">
+        <ion-label>Quantité</ion-label>
+        <ion-select [(ngModel)]="Quantity" placeholder="1" title="Quantité" okText="Confirmer" cancelText="Annuler">
+          <ion-option value="1">1</ion-option>
+          <ion-option value="2">2</ion-option>
+          <ion-option value="3">3</ion-option>
+          <ion-option value="4">4</ion-option>
+          <ion-option value="5">5</ion-option>
+          <ion-option value="6">6</ion-option>
+          <ion-option value="7">7</ion-option>
+          <ion-option value="8">8</ion-option>
+          <ion-option value="9">9</ion-option>
+          <ion-option value="10">10</ion-option>
+        </ion-select>
+      </ion-item>
     </div>
   </div>
 
   <div class="description">
-    <p></p>
+    <p><b>Description:</b><br>{{ display.description }}</p>
   </div>
 
   <div class="buy-and-more">
     <div class="stars">
-
+      <i class="material-icons">
+        star
+      </i>
+      <i class="material-icons">
+        star
+      </i>
+      <i class="material-icons">
+        star
+      </i>
+      <i class="material-icons">
+        star
+      </i>
+      <i class="material-icons">
+        star_border
+      </i>
     </div>
-    <button class="buy">
-
+    <button class="buy" (click)="confirmBuy()">
+      Ajouter au panier
     </button>
   </div>
 </ion-content>
