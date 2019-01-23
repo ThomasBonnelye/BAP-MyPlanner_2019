@@ -10,21 +10,21 @@
     <ion-grid no-padding>
       <ion-row>
         <ion-col style="right: -1%;">
-                <input type="checkbox" id="1">
+                <input type="checkbox" [(ngModel)]="cata" (change)="updateCatA()" id="1">
                 <label style="width: 160px; height: 58px;" for="1">Cérémonies</label>                
         </ion-col>
         <ion-col style="left: -1%;">
-                <input type="checkbox" id="2">
+                <input type="checkbox"  [(ngModel)]="catb"  (change)="updateCatB()" id="2">
                 <label style="width: 160px; height: 58px;" for="2">Anniversaires</label>  
         </ion-col> 
       </ion-row>
       <ion-row> 
         <ion-col style="right: -1%;">
-                <input type="checkbox" id="3">
+                <input type="checkbox" [(ngModel)]="catc" (change)="updateCatC()" id="3">
                 <label style="width: 160px; height: 58px;" for="3">Grandes Occasions</label>   
         </ion-col>
         <ion-col style="left: -1%;">
-                <input type="checkbox" id="4">
+                <input type="checkbox" [(ngModel)]="catd" (change)="updateCatD()" id="4">
                 <label style="width: 160px; height: 58px;" for="4">Fêtes et Soirées</label>  
         </ion-col>
       </ion-row>
@@ -48,7 +48,7 @@
               <a href="" class="col-title"><p>Retour</p></a>
           </ion-col>
           <ion-col class="but">
-              <a href="" class="col-title"><p>Valider</p></a>
+              <a (click)="Envoyer()" class="col-title"><p>Valider</p></a>
           </ion-col> 
         </ion-row>
     </ion-grid>
