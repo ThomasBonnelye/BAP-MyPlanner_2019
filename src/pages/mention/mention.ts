@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the PrestationVedettePage page.
+ * Generated class for the MentionPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-prestation-vedette',
-  templateUrl: 'prestation-vedette.html',
+  selector: 'page-mention',
+  templateUrl: 'mention.html',
 })
-export class PrestationVedettePage {
+export class MentionPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PrestationVedettePage');
+    console.log('ionViewDidLoad MentionPage');
   }
 
 }

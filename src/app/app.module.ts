@@ -20,7 +20,7 @@ import { PpNouveautesPage } from '../pages/pp-nouveautes/pp-nouveautes';
 
 import { LoginPage } from '../pages/login/login';
 import { LoginRedirectPage } from '../pages/login-redirect/login-redirect';
-import { MentionsLegalesPage } from '../pages/mention-legales/mention-legales';
+import { MentionPage } from '../pages/mention/mention';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -37,7 +37,7 @@ import { HttpModule} from "@angular/http";
     TabsPage,
     LoginPage,
     LoginRedirectPage,
-    MentionsLegalesPage,
+    MentionPage,
     PpNouveautesPage,
     PpVedettePage,
     TruncatePipe,
@@ -60,7 +60,7 @@ import { HttpModule} from "@angular/http";
     TabsPage,
     LoginPage,
     LoginRedirectPage,
-    MentionsLegalesPage,
+    MentionPage,
     PpNouveautesPage,
     PpVedettePage,
     FilterPage
