@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PpPage } from "../pp/pp";
 import {Http} from "@angular/http";
 import {PpDisplayPage} from "../pp-display/pp-display";
+import { FilterPage } from '../filter/filter';
 
 
 @IonicPage()
@@ -13,6 +14,12 @@ import {PpDisplayPage} from "../pp-display/pp-display";
 export class PpNouveautesPage {
 
     public porp;
+    public categorieA;
+    public categorieB;
+    public categorieC;
+    public categorieD;
+    public minprice;
+    public maxprice;
     searchQuery: string = '';
     items: any = [];
     famous: any = [];
@@ -25,8 +32,16 @@ export class PpNouveautesPage {
 
     constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams) {
         this.porp = navParams.get("porp");
+        this.categorieA  = navParams.get("categorieA");
+        this.categorieB  = navParams.get("categorieB");
+        this.categorieC  = navParams.get("categorieC");
+        this.categorieD  = navParams.get("categorieD");
+        this.minprice = navParams.get("prixMin");
+        this.maxprice = navParams.get("prixMax");
     }
-
+    goFilter() {
+        this.navCtrl.push(FilterPage, { animate: true, direction: 'forward' });
+    }
     goPP() {
         this.navCtrl.push(PpPage, { porp: this.porp }, { animate: true, direction: 'forward' });
     }

@@ -5,7 +5,6 @@ import 'rxjs/add/operator/map';
 import { PpNouveautesPage } from "../pp-nouveautes/pp-nouveautes";
 import { PpVedettePage } from "../pp-vedette/pp-vedette";
 import { PpDisplayPage } from "../pp-display/pp-display";
-import { LoginPage } from "../login/login";
 
 /**
  * Generated class for the PpPage page.

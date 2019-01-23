@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { PpNouveautesPage } from '../pp-nouveautes/pp-nouveautes';
 
 /**
  * Generated class for the FilterPage page.
@@ -89,6 +90,11 @@ export class FilterPage {
   }
 
   Envoyer() {
+      this.navCtrl.push(PpNouveautesPage,{porp: "prestations", categorieA : this.categorieA, categorieB: this.categorieB, categorieC: this.categorieC, categorieD: this.categorieD, minprice: this.prixMin, maxprice: this.prixMax});
+      console.log('Catégorie A : ' + this.categorieA);
+      console.log('Catégorie B : ' + this.categorieB);
+      console.log('Catégorie C : ' + this.categorieC);
+      console.log('Catégorie D : ' + this.categorieD);
       console.log('Prix min :' + this.prixMin);
       console.log('Prix max :' + this.prixMax);
   }
