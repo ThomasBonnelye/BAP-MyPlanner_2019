@@ -7,6 +7,9 @@ page-filter {
 
     .grid[no-padding] > .row > .col {
         padding: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center
     }
 
     .col-title {
@@ -28,7 +31,10 @@ input[type=checkbox]:not(old) + label {
     background-image: url(../../assets/imgs/label.png);
     text-align: center;
     color: #B1BDD9;
-
+    font-family: Lato;
+    padding-top: auto;
+    font-size: 1.1em;
+    padding-top: 18px;
 }
 
 input[type=checkbox]:checked  + label {
@@ -36,6 +42,7 @@ input[type=checkbox]:checked  + label {
     text-align: center;
     background-color: #FF3366;
     color: white;
+
 }
 
     a {
