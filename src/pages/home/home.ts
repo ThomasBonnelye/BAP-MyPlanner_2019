@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { AlertController, NavController} from 'ionic-angular';
 import { FilterPage } from '../filter/filter';
 import { NavParams } from 'ionic-angular';
 import {Http} from "@angular/http";
 import 'rxjs/add/operator/map';
 import {PpDisplayPage} from "../pp-display/pp-display";
+import { NativeStorage } from "@ionic-native/native-storage";
 
 
 @Component({
@@ -16,11 +17,13 @@ export class HomePage {
   famous: any = [];
   new: any = [];
   url: string;
+  userconfirm: string;
 
-constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams) {
+constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams, private nativeStorage: NativeStorage, private alertCtrl: AlertController) {
 }
 
 ionViewWillLoad() {
+    this.popUp();
 
     this.http.get('https://nicolas.okbutwin.fr/myplanner/api/?products=all')
         .map(res => res.json())
@@ -45,5 +48,32 @@ ionViewWillLoad() {
       this.navCtrl.push(FilterPage, {}, { animate: true, direction: 'forward' });
     }
 
+    popUp() {
+        this.nativeStorage.getItem('userconfirm').then(
+            data => console.log(''),
+            error => this.popUpY()
+        );
+    }
+
+    popUpY() {
+        let alert = this.alertCtrl.create({
+            title: 'Afin de garantir le fonctionnement de l\'application\n' +
+                'vous devez accepter le fait que nous stockions\n' +
+                'des données.',
+            buttons: [
+                {
+                    text: 'Accepter',
+                    role: 'cancel',
+                    handler: () => {
+                        this.nativeStorage.setItem('userconfirm', {confirm: 1})
+                            .then();
+                    }
+                }
+            ]
+        });
+        alert.present();
+    }
 }
+
+
 
