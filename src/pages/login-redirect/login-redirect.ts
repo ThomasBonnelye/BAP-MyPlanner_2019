@@ -39,7 +39,7 @@ export class LoginRedirectPage {
           this.username = data.username;
           this.userlogo = '../../assets/imgs/users/' + data.username + '.png';
           this.userperm = data.perm;
-      });
+      }); 
 
   }
 

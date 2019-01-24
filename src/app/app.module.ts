@@ -27,6 +27,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule} from "@angular/http";
 
+import { IonicStorageModule } from '@ionic/storage';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -49,7 +51,8 @@ import { HttpModule} from "@angular/http";
     BrowserModule,
     IonicModule.forRoot(MyApp),
     FormsModule,
-    HttpModule
+    HttpModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

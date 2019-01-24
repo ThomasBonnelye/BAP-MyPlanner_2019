@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from "@angular/http";
 import { PpPage } from "../pp/pp";
 import { AlertController } from 'ionic-angular';
+import { PanierPage } from '../panier/panier';
 
 /**
  * Generated class for the PpDisplayPage page.
@@ -28,10 +29,6 @@ export class PpDisplayPage {
       this.category = navParams.get("porp");
   }
 
-    goPP() {
-        this.navCtrl.push(PpPage, { porp: this.category }, { animate: true, direction: 'forward' });
-    }
-
   ionViewWillLoad() {
       this.http.get('https://nicolas.okbutwin.fr/myplanner/api/?' + this.category + '=' + this.id)
           .map(res => res.json())
@@ -43,17 +40,20 @@ export class PpDisplayPage {
               let stringWithoutFirstLetter = this.display.title.slice(1).toLowerCase();
               this.titleFormated = firstLetter + stringWithoutFirstLetter;
 
-              //console.log(this.display);
-              //console.log(this.id);
-              //console.log(this.category);
+              console.log(this.display);
+              console.log(this.id);
+              console.log(this.category);
 
           }, err => {
               console.log(err);
       });
   }
 
+    goPP() {
+        this.navCtrl.push(PpPage, { porp: this.category }, { animate: true, direction: 'forward' });
+    }
 
-    confirmBuy() {
+    confirmBuy(id) {
         let alert = this.alertCtrl.create({
             title: 'Votre produit a bien été ajouté\n' +
                 'au panier.',
@@ -63,6 +63,7 @@ export class PpDisplayPage {
                     role: 'cancel',
                     handler: () => {
                         console.log('Cancel clicked');//EVENEMENT CONTINUER ACHATS
+                        this.navCtrl.push(PpPage, { porp: this.category }, { animate: true, direction: 'forward' });
                     }
                 },
                 {
@@ -70,6 +71,7 @@ export class PpDisplayPage {
                     role: 'cancel',
                     handler: () => {
                         console.log('Buy clicked');//EVENEMENT VOIR LE PANIER
+                        this.navCtrl.push(PanierPage, { id: id, porp: this.category }, { animate: true, direction: 'forward' });
                     }
                 }
             ]

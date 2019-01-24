@@ -8,6 +8,8 @@ import { LoginPage } from '../pages/login/login';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
+//import { Storage } from '@ionic/storage';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -17,9 +19,11 @@ export class MyApp {
 
   rootPage:any = TabsPage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController/*, public storage: Storage*/) {
     platform.ready().then(() => {
-      
+      // this.storage.clear().then(() => {
+      //   console.log('all keys cleared');
+      // });
       statusBar.styleDefault();
       splashScreen.hide();
     });
@@ -29,4 +33,5 @@ export class MyApp {
     this.menuCtrl.close();
     this.nav.push(LoginPage);
   }
+
 }
