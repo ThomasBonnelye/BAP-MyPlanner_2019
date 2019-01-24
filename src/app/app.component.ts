@@ -1,7 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {Nav, Platform } from 'ionic-angular';
+import {Nav, NavController, Platform} from 'ionic-angular';
 import { MenuController } from 'ionic-angular';
 
 import { LoginPage } from '../pages/login/login';
@@ -33,5 +33,10 @@ export class MyApp {
     this.menuCtrl.close();
     this.nav.push(LoginPage);
   }
+<<<<<<< HEAD
 
 }
+=======
+}
+
+>>>>>>> 3fec79bb7a81b6ee45ee632e74052d3ca5188603
