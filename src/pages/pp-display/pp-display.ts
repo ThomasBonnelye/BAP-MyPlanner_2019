@@ -3,8 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from "@angular/http";
 import { PpPage } from "../pp/pp";
 import { AlertController } from 'ionic-angular';
-import { PanierPage } from '../panier/panier';
-
 import { GlobalProvider } from '../../providers/global/global';
 
 /**
@@ -22,13 +20,14 @@ import { GlobalProvider } from '../../providers/global/global';
 export class PpDisplayPage {
 
   id: string;
-  category: string;
+  category: string; 
   display: any = [];
   titleFormated: string;
   type: object;
 
   Quantity: string ="1";
   key:string = "quantite";
+
   constructor(private alertCtrl: AlertController, public http: Http, public navCtrl: NavController, public navParams: NavParams, private storageGlobal: GlobalProvider) {
       this.id = navParams.get("id");
       this.category = navParams.get("porp");
@@ -63,34 +62,22 @@ export class PpDisplayPage {
             }
 
     goPP() {
-        this.navCtrl.push(PpPage, { porp: this.category }, { animate: true, direction: 'forward' });
+        this.navCtrl.push(PpPage, { porp: this.category }, { animate: true, direction: 'back' });
     }
 
     confirmBuy(id) {
         this.saveData();
         let alert = this.alertCtrl.create({
+
             title: 'Votre produit a bien été ajouté\n' +
-                'au panier.',
-            buttons: [
-                {
-                    text: 'Continuer les achats',
-                    role: 'cancel',
-                    handler: () => {
-                        console.log('Cancel clicked');//EVENEMENT CONTINUER ACHATS
-                        this.navCtrl.push(PpPage, { porp: this.category }, { animate: true, direction: 'forward' });
-                    }
-                },
-                {
-                    text: 'Voir le panier',
-                    role: 'cancel',
-                    handler: () => {
-                        console.log('Buy clicked');//EVENEMENT VOIR LE PANIER
-                        this.navCtrl.push(PanierPage, { id: this.id, porp: this.category }, { animate: true, direction: 'forward' });
-                    }
-                }
-            ]
+                'au panier !',
         });
         alert.present();
+        setTimeout(()=>{
+            alert.dismiss();
+            this.navCtrl.push(PpPage, { porp: this.category }, { animate: true, direction: 'forward' });
+        }, 2000);
+        
+      }
     }
 
-}
