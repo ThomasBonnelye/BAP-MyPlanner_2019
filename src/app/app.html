@@ -2,7 +2,7 @@
   <ion-content>
     <div style="top: auto;">
       <div (click)="onClick()" class="image_login_perso">
-          <img *ngIf="userperm == null" src="{{userlogo}}" alt="">
+          <img *ngIf="userperm != null" src="{{userlogo}}" alt="">
           <img *ngIf="userperm == null" src="../assets/imgs/login.png" alt="My planner user image">
       </div>
   

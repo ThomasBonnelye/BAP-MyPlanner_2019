@@ -28,9 +28,6 @@ export class MyApp {
       this.storage.clear().then(() => {
        console.log('toutes les keys de données ont été suprrimées');
        });
-       this.nativeStorage.clear().then(() => {
-        console.log('Utilisateur déconnecté');
-        });
       statusBar.styleDefault();
       splashScreen.hide();
     });
