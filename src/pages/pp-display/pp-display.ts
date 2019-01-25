@@ -26,6 +26,9 @@ export class PpDisplayPage {
   display: any = [];
   titleFormated: string;
   type: object;
+
+  Quantity: string ="1";
+  key:string = "quantite";
   constructor(private alertCtrl: AlertController, public http: Http, public navCtrl: NavController, public navParams: NavParams, private storageGlobal: GlobalProvider) {
       this.id = navParams.get("id");
       this.category = navParams.get("porp");
@@ -54,6 +57,9 @@ export class PpDisplayPage {
   saveData(){
         this.storageGlobal.setObject("id", this.id);
         console.log(this.id +' data saved');
+        this.storageGlobal.setObject("category", this.category);
+        console.log(this.category +' data saved');
+        this.storageGlobal.set(this.key, this.Quantity);
             }
 
     goPP() {

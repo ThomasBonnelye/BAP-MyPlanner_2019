@@ -15,11 +15,14 @@ import { GlobalProvider } from '../../providers/global/global';
   templateUrl: 'panier.html',
 })
 export class PanierPage {
-
+  
+  famous: any = [];
   id: string;
   category: string;
   display: any = [];
   titleFormated: string;
+  quantite: string;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public http: Http, public storageGlobal: GlobalProvider) {
     //this.id = navParams.get("id");
@@ -28,6 +31,26 @@ export class PanierPage {
   }
 
   ionViewWillLoad() {
+    this.storageGlobal.getObject("category").then(result => {
+      if (result != null) {
+        console.log("Result.Category: " + result);
+        this.category = result;
+        console.log("This.Category: " + this.category);
+      }
+    }).catch(e => {
+      console.log("error: ");
+      console.log(e);
+    });
+
+    this.storageGlobal.get("quantite").then(result => {
+      if (result != null) {
+        console.log("Quantite: " + result);
+        this.quantite =result;
+      }
+    }).catch(e => {
+      console.log("error: " + e);
+     // Handle errors here
+    });
 
     this.storageGlobal.getObject("id").then(result => {
       if (result != null) {
@@ -36,7 +59,7 @@ export class PanierPage {
         this.id = result;
         console.log("This.Id: " + this.id);
         if (this.id != null) {
-          this.http.get('https://nicolas.okbutwin.fr/myplanner/api/?produits=' + this.id)
+          this.http.get('https://nicolas.okbutwin.fr/myplanner/api/?' + this.category + '=' + this.id)
           .map(res => res.json())
           .subscribe(data => {
   
@@ -52,7 +75,7 @@ export class PanierPage {
   
           }, err => {
               console.log(err);
-              console.log('https://nicolas.okbutwin.fr/myplanner/api/?produits=' + this.id);
+              console.log('https://nicolas.okbutwin.fr/myplanner/api/?' + this.category + '=' + this.id);
       });
         }
       }
@@ -62,6 +85,7 @@ export class PanierPage {
     });
 
     //this.http.get('https://nicolas.okbutwin.fr/myplanner/api/?' + this.category + '=' + this.id)
+    //this.http.get('https://nicolas.okbutwin.fr/myplanner/api/?produits=' + this.id)
    
 }
 
