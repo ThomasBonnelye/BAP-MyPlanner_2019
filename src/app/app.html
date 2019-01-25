@@ -1,9 +1,9 @@
-<ion-menu [content]="content">
+<ion-menu [content]="content" (ionOpen)="menuOpened()">
   <ion-content>
     <div style="top: auto;">
       <div (click)="onClick()" class="image_login_perso">
-        <img *ngIf="userperm == 0 || userperm == 1" src="{{userlogo}}" alt="My planner user image">
-        <img *ngIf="!userperm" src="../assets/imgs/login.png" alt="My planner user image">
+          <img *ngIf="userperm != null" src="{{userlogo}}" alt="">
+          <img *ngIf="userperm == null" src="../assets/imgs/login.png" alt="My planner user image">
       </div>
   
         <hr style=" background-color: #a37f93; border: 1px solid #a37f93;
