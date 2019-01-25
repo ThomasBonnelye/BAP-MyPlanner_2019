@@ -47,6 +47,5 @@ export class MyApp {
       console.log('Le chemin de limage est:', this.userlogo);
       console.log('LUser perm est:', this.userperm);
   }); 
-  }
-
+}
 }
