@@ -36,7 +36,7 @@ export class PanierPage {
         this.id = result;
         console.log("This.Id: " + this.id);
         if (this.id != null) {
-          this.http.get('https://nicolas.okbutwin.fr/myplanner/api/?products=' + this.id)
+          this.http.get('https://nicolas.okbutwin.fr/myplanner/api/?produits=' + this.id)
           .map(res => res.json())
           .subscribe(data => {
   
@@ -52,7 +52,7 @@ export class PanierPage {
   
           }, err => {
               console.log(err);
-              console.log('https://nicolas.okbutwin.fr/myplanner/api/?products=' + this.id);
+              console.log('https://nicolas.okbutwin.fr/myplanner/api/?produits=' + this.id);
       });
         }
       }

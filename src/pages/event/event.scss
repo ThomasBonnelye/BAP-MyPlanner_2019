@@ -1,3 +1,80 @@
 page-event {
 
+  @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Lobster+Two:400,700');
+
+  .input-cover {
+    position: static;
+  }
+  .mention_legales {
+    margin-top: 25px !important;
+    background: #F8FAFF !important;
+    color: #FF3366 !important;
+    font-size: 18px !important;
+    width: 200px;
+    height: 60px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    span:nth-child(1) {
+      margin-bottom: -10px;
+      height: 30px;
+      text-align: center;
+    }
+    span:nth-child(1) {
+      height: 30px;
+      text-align: center;
+    }
+  }
+  h1 {
+    text-align: center;
+    font-weight: 300;
+    color:  #707070;
+  }
+  h3 {
+    color: #FF3366 !important;
+    margin-top: 40px;
+    margin-left: 15px;
+  }
+  a {
+    color: #FF3366 !important;
+    font-weight: 400;
+    cursor: pointer;
+  }
+  p {
+    margin-bottom: 8px;
+    font-weight: 300;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  nav {
+    height: 30px;
+    width: 100%;
+    ul {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      li {
+        list-style-type:none;
+        a {
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          color: #92657B !important;
+          .material-icons {
+            position: relative;
+            font-size: 20px !important;
+          }
+          span {
+            font-size: 16px !important;
+          }
+        }
+      }
+    }
+  }
 }
