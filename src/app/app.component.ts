@@ -26,8 +26,11 @@ export class MyApp {
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController, public storage: Storage, private nativeStorage: NativeStorage) {
     platform.ready().then(() => {
       this.storage.clear().then(() => {
-       console.log('all keys cleared');
+       console.log('toutes les keys de données ont été suprrimées');
        });
+       this.nativeStorage.clear().then(() => {
+        console.log('Utilisateur déconnecté');
+        });
       statusBar.styleDefault();
       splashScreen.hide();
     });
