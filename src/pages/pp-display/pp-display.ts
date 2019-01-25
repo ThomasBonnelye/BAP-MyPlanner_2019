@@ -5,6 +5,8 @@ import { PpPage } from "../pp/pp";
 import { AlertController } from 'ionic-angular';
 import { PanierPage } from '../panier/panier';
 
+import { GlobalProvider } from '../../providers/global/global';
+
 /**
  * Generated class for the PpDisplayPage page.
  *
@@ -23,8 +25,8 @@ export class PpDisplayPage {
   category: string;
   display: any = [];
   titleFormated: string;
-
-  constructor(private alertCtrl: AlertController, public http: Http, public navCtrl: NavController, public navParams: NavParams) {
+  type: object;
+  constructor(private alertCtrl: AlertController, public http: Http, public navCtrl: NavController, public navParams: NavParams, private storageGlobal: GlobalProvider) {
       this.id = navParams.get("id");
       this.category = navParams.get("porp");
   }
@@ -49,11 +51,17 @@ export class PpDisplayPage {
       });
   }
 
+  saveData(){
+        this.storageGlobal.setObject("id", this.id);
+        console.log(this.id +' data saved');
+            }
+
     goPP() {
         this.navCtrl.push(PpPage, { porp: this.category }, { animate: true, direction: 'forward' });
     }
 
     confirmBuy(id) {
+        this.saveData();
         let alert = this.alertCtrl.create({
             title: 'Votre produit a bien été ajouté\n' +
                 'au panier.',
@@ -71,7 +79,7 @@ export class PpDisplayPage {
                     role: 'cancel',
                     handler: () => {
                         console.log('Buy clicked');//EVENEMENT VOIR LE PANIER
-                        this.navCtrl.push(PanierPage, { id: id, porp: this.category }, { animate: true, direction: 'forward' });
+                        this.navCtrl.push(PanierPage, { id: this.id, porp: this.category }, { animate: true, direction: 'forward' });
                     }
                 }
             ]
