@@ -22,4 +22,8 @@ export class MentionPage {
     console.log('ionViewDidLoad MentionPage');
   }
 
+  goBack() {
+    this.navCtrl.pop();
+  }
+
 }

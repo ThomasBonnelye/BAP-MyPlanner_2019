@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 /**
  * Generated class for the EventPage page.
@@ -15,11 +16,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EventPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private inAppBrowser: InAppBrowser) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventPage');
+  }
+
+  GoSite () { 
+    this.inAppBrowser.create("https://www.myplanner.fr/evenements", '_system', 'location=yes');
   }
 
 }

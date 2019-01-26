@@ -1,9 +1,9 @@
 
 <ion-content style="background-color: #fcfdff;">
-  <div (click)="goFilter()" class="event">
+  <div (click)="goEvent()" class="event">
       <img src="../../assets/imgs/event.jpeg" alt="">
       <div class="title">
-        <h1>Composes ton</h1>
+        <h1 style="margin-top: 25px;">Composes ton</h1>
         <h1>évènement sur mesure</h1>
       </div>
   </div>
@@ -43,7 +43,7 @@
           </ion-card>
         </div>
     </ion-scroll>
-    <div class="blog">
+    <div (click)="GoBlog()" class="blog">
         <img id="banner-blog" src="../../assets/imgs/blog.jpeg">
         <div class="title-blog" style="top: 24%;">Consulter le blog</div>
     </div>

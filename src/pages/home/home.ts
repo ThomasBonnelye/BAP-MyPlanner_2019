@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { AlertController, NavController} from 'ionic-angular';
-import { FilterPage } from '../filter/filter';
 import { NavParams } from 'ionic-angular';
 import {Http} from "@angular/http";
 import 'rxjs/add/operator/map';
 import {PpDisplayPage} from "../pp-display/pp-display";
 import { NativeStorage } from "@ionic-native/native-storage";
-
+import { EventPage } from '../../pages/event/event';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @Component({
   selector: 'page-home',
@@ -19,7 +19,7 @@ export class HomePage {
   url: string;
   userconfirm: string;
 
-constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams, private nativeStorage: NativeStorage, private alertCtrl: AlertController) {
+constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams, private nativeStorage: NativeStorage, private alertCtrl: AlertController, private inAppBrowser: InAppBrowser) {
 }
 
 ionViewWillLoad() {
@@ -44,9 +44,13 @@ ionViewWillLoad() {
         this.navCtrl.push(PpDisplayPage, { id: id, porp: 'produits' }, { animate: true, direction: 'forward' });
     }
 
-    goFilter() {
-      this.navCtrl.push(FilterPage, {}, { animate: true, direction: 'forward' });
+    goEvent() {
+      this.navCtrl.push(EventPage, {}, { animate: true, direction: 'forward' });
     }
+
+    GoBlog () { 
+        this.inAppBrowser.create("https://blog.myplanner.fr", '_system', 'location=yes');
+      }
 
     popUp() {
         this.nativeStorage.getItem('userconfirm').then(

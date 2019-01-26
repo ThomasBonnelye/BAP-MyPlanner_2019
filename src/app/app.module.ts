@@ -29,7 +29,8 @@ import { HttpModule} from "@angular/http";
 import { HttpClientModule } from '@angular/common/http'; 
 import { IonicStorageModule } from '@ionic/storage';
 
-import {GlobalProvider} from '../providers/global/global';
+import { GlobalProvider } from '../providers/global/global';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import {GlobalProvider} from '../providers/global/global';
     FormsModule,
     HttpModule,
     IonicStorageModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -79,7 +80,8 @@ import {GlobalProvider} from '../providers/global/global';
     SplashScreen,
     NativeStorage,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    GlobalProvider
+    GlobalProvider,
+    InAppBrowser,
   ]
 })
 export class AppModule {

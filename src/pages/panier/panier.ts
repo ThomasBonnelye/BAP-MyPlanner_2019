@@ -84,4 +84,8 @@ export class PanierPage {
    
 }
 
+goBack() {
+  this.navCtrl.pop();
+}
+
 }

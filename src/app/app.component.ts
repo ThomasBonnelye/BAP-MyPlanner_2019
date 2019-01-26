@@ -6,9 +6,12 @@ import { MenuController } from 'ionic-angular';
 
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
+import { MentionPage } from '../pages/mention/mention';
 
 import { NativeStorage } from '@ionic-native/native-storage';
 import { Storage } from '@ionic/storage';
+
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @Component({
   templateUrl: 'app.html'
@@ -23,7 +26,7 @@ export class MyApp {
 
   rootPage:any = TabsPage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController, public storage: Storage, private nativeStorage: NativeStorage) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController, public storage: Storage, private nativeStorage: NativeStorage, private inAppBrowser: InAppBrowser) {
     platform.ready().then(() => {
       this.storage.clear().then(() => {
        console.log('toutes les keys de données ont été suprrimées');
@@ -37,6 +40,25 @@ export class MyApp {
     this.menuCtrl.close();
     this.nav.push(LoginPage);
   }
+
+  goMention() {
+    this.menuCtrl.close();
+    this.nav.push(MentionPage);
+  }
+
+  goPromotion() { 
+    this.inAppBrowser.create("https://www.myplanner.fr/promotions", '_system', 'location=yes');
+  }
+
+  goBon() { 
+    this.inAppBrowser.create("https://www.myplanner.fr/les-avantages.php", '_system', 'location=yes');
+  }
+
+  goBlog() { 
+    this.inAppBrowser.create("https://blog.myplanner.fr", '_system', 'location=yes');
+  }
+
+
 
   menuOpened() {
     this.nativeStorage.getItem('userdata').then((data)=>{

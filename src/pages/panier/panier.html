@@ -1,16 +1,25 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>panier</ion-title>
-  </ion-navbar>
-
-</ion-header>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <ion-content padding>
+
+<nav>
+    <ul>
+      <li>
+        <a (click)="goBack()">
+          <i class="material-icons">
+            arrow_back_ios
+          </i>
+          <span>Retour</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
     <img src="../../assets/imgs/pp/img/{{ display.img }}" alt="image: {{ titleFormated }}">
     <h3>{{ titleFormated }}</h3>
     <h4>{{ display.price }} €</h4>
     <h3>{{ quantite }}</h3>
     <h3>Prix total: {{ display.price * quantite }} €</h3>
+
 </ion-content>
 
