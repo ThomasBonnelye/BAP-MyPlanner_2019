@@ -60,6 +60,7 @@ export class MyApp {
   }
 
   eval() {
+    this.menuCtrl.close();
     this.appRate.preferences = {
       displayAppName: 'Myplanner',
       usesUntilPrompt: 0, //nombre de fois qu'il faut ouvrir l'application avant d'avoir l'évaluation ici 0 étant un bouton
@@ -74,6 +75,14 @@ export class MyApp {
         cancelButtonLabel: 'Non merci',
         laterButtonLabel: 'Pas cette fois',
         rateButtonLabel: 'Oui !'
+      },
+      callbacks: {
+        onRateDialogShow: function(callback) {
+          console.log('Ok RATE');
+        },
+        onButtonClicked: function(buttonIndex) {
+          console.log('selected index: ', buttonIndex);
+        }
       }
     }
     this.appRate.promptForRating(true);
