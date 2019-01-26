@@ -31,6 +31,7 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { GlobalProvider } from '../providers/global/global';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { AppRate } from '@ionic-native/app-rate';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     GlobalProvider,
     InAppBrowser,
+    AppRate
   ]
 })
 export class AppModule {

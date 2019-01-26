@@ -12,6 +12,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
 import { Storage } from '@ionic/storage';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { AppRate } from '@ionic-native/app-rate';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,7 +27,7 @@ export class MyApp {
 
   rootPage:any = TabsPage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController, public storage: Storage, private nativeStorage: NativeStorage, private inAppBrowser: InAppBrowser) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController, public storage: Storage, private nativeStorage: NativeStorage, private inAppBrowser: InAppBrowser, public appRate: AppRate) {
     platform.ready().then(() => {
       this.storage.clear().then(() => {
        console.log('toutes les keys de données ont été suprrimées');
@@ -58,7 +59,30 @@ export class MyApp {
     this.inAppBrowser.create("https://blog.myplanner.fr", '_system', 'location=yes');
   }
 
+  eval() {
+    appRate.preferences = {
+      openStoreInApp: false,
+      displayAppName: 'Myplanner',
+      usesUntilPrompt: 0, //nombre de fois qu'il faut ouvrir l'application avant d'avoir l'évaluation ici 0 étant un bouton
+      promptAgainForEachNewVersion: true,
+      storeAppURL: {
+        ios: '1216856883', //Apple ID (ici celui d'un test)
+        android: 'market://details?id=com.devdactic.crossingnumbers'
+      },
+      customLocale: {
+        title: 'Vous aimez utiliser notre application ?',
+        message: 'Si vous aimez, pourriez-vous prendre une petite minute pour évaluer %@ ?',
+        cancelButtonLabel: 'Non merci',
+        laterButtonLabel: 'Pas cette fois',
+        rateButtonLabel: 'Oui !'
+      }
+    }
+    appRate.promptForRating(true);
+  }
 
+  goContact() { 
+    this.inAppBrowser.create("https://www.myplanner.fr/contact.php", '_system', 'location=yes');
+  }
 
   menuOpened() {
     this.nativeStorage.getItem('userdata').then((data)=>{
