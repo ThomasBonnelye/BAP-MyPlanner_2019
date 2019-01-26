@@ -60,8 +60,7 @@ export class MyApp {
   }
 
   eval() {
-    appRate.preferences = {
-      openStoreInApp: false,
+    this.appRate.preferences = {
       displayAppName: 'Myplanner',
       usesUntilPrompt: 0, //nombre de fois qu'il faut ouvrir l'application avant d'avoir l'évaluation ici 0 étant un bouton
       promptAgainForEachNewVersion: true,
@@ -77,7 +76,7 @@ export class MyApp {
         rateButtonLabel: 'Oui !'
       }
     }
-    appRate.promptForRating(true);
+    this.appRate.promptForRating(true);
   }
 
   goContact() { 
