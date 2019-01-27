@@ -15,11 +15,27 @@
     </ul>
   </nav>
 
-    <img src="../../assets/imgs/pp/img/{{ display.img }}" alt="image: {{ titleFormated }}">
-    <h3>{{ titleFormated }}</h3>
-    <h4>{{ display.price }} €</h4>
-    <h3>{{ quantite }}</h3>
-    <h3>Prix total: {{ display.price * quantite }} €</h3>
+
+  <div class="items">
+    <div class="item">
+      <div class="img">
+        <img src="../../assets/imgs/pp/img/{{ display.img }}" alt="image: {{ titleFormated }}">
+      </div>
+      <div class="item-data">
+        <h3>{{ titleFormated }}</h3>
+        <h4>X{{ quantite }}</h4>
+        <h5>{{ display.price }}€</h5>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3 class="total-price">Prix total: <span>{{ display.price * quantite }} €</span></h3>
+
+  <div class="command-div">
+    <button class="command">COMMANDER</button>
+  </div>
 
 </ion-content>
 
