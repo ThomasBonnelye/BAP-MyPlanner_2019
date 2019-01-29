@@ -1,5 +1,5 @@
 {
-  "name": "Tabs_SideMenu",
+  "name": "MyPlanner",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
@@ -45,7 +45,9 @@
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",
     "sweetalert": "^2.1.2",
-    "zone.js": "0.8.26"
+    "zone.js": "0.8.26",
+    "org.apache.cordova.plugin.cache": "https://github.com/tiltshiftfocus/cordova-plugin-cache.git",
+    "cordova-plugin-inappbrowser": "~3.0.0"
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.2.1",

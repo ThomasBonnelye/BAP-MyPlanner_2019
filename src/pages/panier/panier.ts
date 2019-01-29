@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Http } from "@angular/http";
 import { GlobalProvider } from '../../providers/global/global';
+import { AlertController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { PpPage } from '../pp/pp';
+
 /**
  * Generated class for the PanierPage page.
  *
@@ -22,7 +26,7 @@ export class PanierPage {
   titleFormated: string;
   quantite: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public http: Http, public storageGlobal: GlobalProvider) {
+  constructor(private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams,public http: Http, public storageGlobal: GlobalProvider, public storage: Storage) {
   }
 
   ionViewWillLoad() {
@@ -86,6 +90,23 @@ export class PanierPage {
 
 goBack() {
   this.navCtrl.pop();
+}
+
+command(no) {
+  let alert = this.alertCtrl.create({
+
+      title: 'Votre commande est bien passée !',
+  });
+  alert.present();
+  setTimeout(()=>{
+      alert.dismiss();
+      this.quantite = "null";
+      this.storage.clear().then(() => {
+        console.log('element supprimé du panier');
+        });
+      this.navCtrl.pop();
+  }, 2000);
+  
 }
 
 }

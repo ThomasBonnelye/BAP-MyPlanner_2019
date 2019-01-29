@@ -19,7 +19,7 @@ export class FilterPage {
 
   prixMin: number;
   prixMax: number;
-  type: string;
+  type: string; 
   categorieA: number = 0;
   categorieB: number = 0;
   categorieC: number = 0;

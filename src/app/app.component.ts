@@ -30,7 +30,7 @@ export class MyApp {
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController, public storage: Storage, private nativeStorage: NativeStorage, private inAppBrowser: InAppBrowser, public appRate: AppRate) {
     platform.ready().then(() => {
       this.storage.clear().then(() => {
-       console.log('toutes les keys de données ont été suprrimées');
+       console.log('toutes les keys de données ont été suprimées');
        });
       statusBar.styleDefault();
       splashScreen.hide();

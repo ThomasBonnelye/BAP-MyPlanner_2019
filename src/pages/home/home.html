@@ -12,21 +12,21 @@
   </p>
   <ion-grid>
       <ion-row>
-        <ion-col>
+        <ion-col (click)="goCere()">
             <img src="../../assets/imgs/ceremonie.jpeg">
             <div class="col-title">Cérémonies</div>
         </ion-col>
-        <ion-col>
+        <ion-col (click)="goAnniv()">
             <img src="../../assets/imgs/anniv.jpg">
             <div class="col-title">Anniversaire</div>
         </ion-col> 
       </ion-row>
       <ion-row>
-        <ion-col>
+        <ion-col (click)="goOcca()">
             <img src="../../assets/imgs/occa.jpeg">
             <div class="col-title" style="right: 1%;">Grandes Occasions</div>
         </ion-col>
-        <ion-col>
+        <ion-col (click)="goFete()">
             <img src="../../assets/imgs/fetes.jpeg">
             <div class="col-title">Fêtes et Soirées</div>
         </ion-col>

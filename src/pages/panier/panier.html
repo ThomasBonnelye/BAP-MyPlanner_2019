@@ -2,7 +2,7 @@
 
 <ion-content padding>
 
-<nav>
+  <nav>
     <ul>
       <li>
         <a (click)="goBack()">
@@ -15,6 +15,7 @@
     </ul>
   </nav>
 
+<div *ngIf="quantite != null">
 
   <div class="items">
     <div class="item">
@@ -34,8 +35,11 @@
   <h3 class="total-price">Prix total: <span>{{ display.price * quantite }} €</span></h3>
 
   <div class="command-div">
-    <button class="command">COMMANDER</button>
+    <button (click)="command()" class="command">COMMANDER</button>
   </div>
-
+</div>
+<div *ngIf="quantite == null">
+  <h1 style="text-align: center; color: #707070 !important; margin-top: 28%; font-size: 3rem;">Votre panier est vide !</h1>
+</div>
 </ion-content>
 

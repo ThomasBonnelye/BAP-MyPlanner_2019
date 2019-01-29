@@ -7,6 +7,7 @@ import {PpDisplayPage} from "../pp-display/pp-display";
 import { NativeStorage } from "@ionic-native/native-storage";
 import { EventPage } from '../../pages/event/event';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { PpVedettePage } from "../pp-vedette/pp-vedette";
 
 @Component({
   selector: 'page-home',
@@ -46,6 +47,21 @@ ionViewWillLoad() {
 
     goEvent() {
       this.navCtrl.push(EventPage, {}, { animate: true, direction: 'forward' });
+    }
+
+    goCere() {
+        this.navCtrl.push(PpVedettePage,{porp: "prestations", categorieA : 1, categorieB: 0, categorieC: 0, categorieD: 0, minprice: 0, maxprice: 200000, sender: 'filter'});
+    }
+
+    goAnniv() {
+        this.navCtrl.push(PpVedettePage,{porp: "prestations", categorieA : 0, categorieB: 1, categorieC: 0, categorieD: 0, minprice: 0, maxprice: 200000, sender: 'filter'});
+    }
+    goOcca() {
+        this.navCtrl.push(PpVedettePage,{porp: "prestations", categorieA : 0, categorieB: 0, categorieC: 1, categorieD: 0, minprice: 0, maxprice: 200000, sender: 'filter'});
+    }
+
+    goFete() {
+        this.navCtrl.push(PpVedettePage,{porp: "prestations", categorieA : 0, categorieB: 0, categorieC: 0, categorieD: 1, minprice: 0, maxprice: 200000, sender: 'filter'});
     }
 
     GoBlog () { 
