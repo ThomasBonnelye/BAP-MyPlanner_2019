@@ -2,7 +2,7 @@
 
 ## Description
 
-Creation of a website
+MyPlanner App using Ionic. 
 
 ## Used 
 #### Framework
